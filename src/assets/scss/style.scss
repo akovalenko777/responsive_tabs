@@ -1,8 +1,28 @@
-$border-color: #dbdbdb;
-$tab-inactive: #efefef;
-$tab-active: #fff;
-$tab-color: #232323;
-$radius: 5px;
+// $border-color: #dbdbdb;
+// $tab-inactive: #efefef;
+// $tab-active: #fff;
+// $tab-color: #232323;
+// $icon-active: #AB4ABA;
+// $icon-inactive: #EBC8ED;
+// $radius: 5px;
+
+// $border-color: #DFAFE3;
+// $tab-inactive: #FCEFFC;
+// $tab-active: #F3D9F4;
+// $tab-color: #343434;
+// $icon-active: #AB4ABA;
+// $icon-inactive: #EBC8ED;
+
+
+$border-color: #d2afe3;
+$tab-inactive: #f9effc;
+$tab-active: #efd9f4;
+$tab-color: #343434;
+$icon-active: #9a4aba;
+$icon-inactive: #e2c8ed;
+$radius: 10px;
+
+
 
 $base-size:16;
 *, *:before, *:after {
@@ -23,7 +43,7 @@ html ,body {
 
 @mixin childtop($n) {
     &:nth-child(#{$n}){
-          top: ($n - 1)*25px;
+          top: ($n - 1)*2rem;
     }
 }
 @mixin accord(){
@@ -43,13 +63,13 @@ html ,body {
             position: absolute;
             right: 20px;
             top: 50%;
-            width: 7px;
-            height: 7px;
-            border-right: 1px solid $tab-color;
-            border-bottom: 1px solid $tab-color;
+            width: 10px;
+            height: 10px;
+            border-right: 1px solid $icon-active;
+            border-bottom: 1px solid $icon-active;
             transition: all .2s ease;
             transform: rotate(45deg);
-            margin-top: -5px;
+            margin-top: -7px;
         }
         &.active {
             border-radius: $radius $radius 0 0;
@@ -57,7 +77,7 @@ html ,body {
             margin-bottom: 0;
             &:after {
                 transform: rotate(-135deg);
-                margin-top: 0;
+                margin-top: -2px;
             }
             &:focus {
                 border-bottom-color: $border-color;
@@ -92,8 +112,8 @@ html ,body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    @include fz(18);
+    font-family: 'Roboto', sans-serif;
+    @include fz(16);
 }
 
 .container {
@@ -102,6 +122,19 @@ body {
     margin: 0 auto;
 
     padding: 100px 0;
+}
+
+h3 {
+    font-weight: 500;
+    @include fz(22);
+    line-height: 26px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 175%;
 }
 
 .hr {
@@ -121,7 +154,7 @@ body {
 
         cursor: pointer;
         line-height: 1.4rem;
-        padding: .6rem 1.2rem;
+        padding: 1rem 1.5rem;
         margin-right: 5px;
         border: 1px solid $border-color;
         border-radius: $radius $radius 0 0;
@@ -131,12 +164,33 @@ body {
         @include fz(18);
         text-align: left;
         text-decoration: none;
+        overflow: hidden;
+        i {
+            vertical-align: middle;
+            font-size: 2rem;
+            color: $icon-inactive;
+            margin-right: 0.5rem;
+        }
         &.active {
             background-color: $tab-active;
             border-bottom: 1px solid $tab-active;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: $radius*2;
+                border-radius: $radius;
+                border-top: 3px solid $border-color;
+            }
             &:focus {
                 background-color: $tab-active;
                 border-bottom-color: $tab-active;
+            }
+            i {
+                color: $icon-active;
             }
         }
         &:focus {
@@ -145,10 +199,11 @@ body {
             border-color: darken($border-color, 5);
             border-bottom-color: $border-color;
         }
+        
     }
     &__content {
         display: none;
-        padding: 20px;
+        padding: 2rem;
         border: 1px solid $border-color;
         border-radius: 0 $radius $radius $radius;
         order: 2;
@@ -172,6 +227,7 @@ body {
                 position: absolute;
                 left: 1px;
                 bottom: unset;
+                /*dirty hack - but it works*/
                 @include childtop(1);
                 @include childtop(2);
                 @include childtop(3);
@@ -179,9 +235,18 @@ body {
                 @include childtop(5);
                 @include childtop(6);
                 @include childtop(7);
+                @include childtop(8);
+                @include childtop(9);
+                @include childtop(10);
                 &.active {
                     border-bottom-color: $border-color;
                     border-right: $tab-active;
+                    &:before {
+                        width: $radius*2;
+                        height: 100%;
+                        border-top: none;
+                        border-left: 3px solid $border-color;
+                    }
                 }
             }
             &__content {

@@ -10,8 +10,8 @@ html, body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
 }
 
 .container {
@@ -21,8 +21,21 @@ body {
   padding: 100px 0;
 }
 
+h3 {
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 26px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 175%;
+}
+
 .hr {
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid #d2afe3;
   margin: 3rem 0;
 }
 
@@ -37,38 +50,59 @@ body {
   order: 1;
   cursor: pointer;
   line-height: 1.4rem;
-  padding: 0.6rem 1.2rem;
+  padding: 1rem 1.5rem;
   margin-right: 5px;
-  border: 1px solid #dbdbdb;
-  border-radius: 5px 5px 0 0;
-  color: #232323;
-  background-color: #efefef;
+  border: 1px solid #d2afe3;
+  border-radius: 10px 10px 0 0;
+  color: #343434;
+  background-color: #f9effc;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
   text-align: left;
   text-decoration: none;
+  overflow: hidden;
+}
+.tabs__link i {
+  vertical-align: middle;
+  font-size: 2rem;
+  color: #e2c8ed;
+  margin-right: 0.5rem;
 }
 .tabs__link.active {
-  background-color: #fff;
-  border-bottom: 1px solid #fff;
+  background-color: #efd9f4;
+  border-bottom: 1px solid #efd9f4;
+}
+.tabs__link.active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  border-top: 3px solid #d2afe3;
 }
 .tabs__link.active:focus {
-  background-color: #fff;
-  border-bottom-color: #fff;
+  background-color: #efd9f4;
+  border-bottom-color: #efd9f4;
+}
+.tabs__link.active i {
+  color: #9a4aba;
 }
 .tabs__link:focus {
   outline: none;
-  background-color: #d6d6d6;
-  border-color: #cecece;
-  border-bottom-color: #dbdbdb;
+  background-color: #e9c4f4;
+  border-color: #c79cdc;
+  border-bottom-color: #d2afe3;
 }
 .tabs__content {
   display: none;
-  padding: 20px;
-  border: 1px solid #dbdbdb;
-  border-radius: 0 5px 5px 5px;
+  padding: 2rem;
+  border: 1px solid #d2afe3;
+  border-radius: 0 10px 10px 10px;
   order: 2;
-  background-color: #fff;
+  background-color: #efd9f4;
 }
 .tabs__content.active {
   display: block;
@@ -79,7 +113,7 @@ body {
 }
 .tabs--accord .tabs__link {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-right: 0;
   margin-bottom: 5px;
   order: unset;
@@ -92,31 +126,31 @@ body {
   position: absolute;
   right: 20px;
   top: 50%;
-  width: 7px;
-  height: 7px;
-  border-right: 1px solid #232323;
-  border-bottom: 1px solid #232323;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid #9a4aba;
+  border-bottom: 1px solid #9a4aba;
   transition: all 0.2s ease;
   transform: rotate(45deg);
-  margin-top: -5px;
+  margin-top: -7px;
 }
 .tabs--accord .tabs__link.active {
-  border-radius: 5px 5px 0 0;
-  border-bottom-color: #dbdbdb;
+  border-radius: 10px 10px 0 0;
+  border-bottom-color: #d2afe3;
   margin-bottom: 0;
 }
 .tabs--accord .tabs__link.active:after {
   transform: rotate(-135deg);
-  margin-top: 0;
+  margin-top: -2px;
 }
 .tabs--accord .tabs__link.active:focus {
-  border-bottom-color: #dbdbdb;
+  border-bottom-color: #d2afe3;
 }
 .tabs--accord .tabs__content {
   order: unset;
   margin-bottom: 5px;
   border-top: none;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 10px 10px;
 }
 .tabs--accord.tabs--vertical {
   display: flex;
@@ -126,12 +160,12 @@ body {
   position: relative;
   top: unset !important;
   left: 0;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .tabs--accord.tabs--vertical .tabs__link.active {
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 0 0;
   margin-bottom: 0;
-  border-right: 1px solid #dbdbdb;
+  border-right: 1px solid #d2afe3;
 }
 .tabs--accord.tabs--vertical .tabs__content {
   width: 100%;
@@ -145,35 +179,51 @@ body {
   margin-right: 0;
   margin-bottom: 5px;
   width: 200px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 10px 0 0 10px;
   position: absolute;
   left: 1px;
   bottom: unset;
+  /*dirty hack - but it works*/
 }
 .tabs--vertical .tabs__link:nth-child(1) {
-  top: 0px;
+  top: 0rem;
 }
 .tabs--vertical .tabs__link:nth-child(2) {
-  top: 25px;
+  top: 2rem;
 }
 .tabs--vertical .tabs__link:nth-child(3) {
-  top: 50px;
+  top: 4rem;
 }
 .tabs--vertical .tabs__link:nth-child(4) {
-  top: 75px;
+  top: 6rem;
 }
 .tabs--vertical .tabs__link:nth-child(5) {
-  top: 100px;
+  top: 8rem;
 }
 .tabs--vertical .tabs__link:nth-child(6) {
-  top: 125px;
+  top: 10rem;
 }
 .tabs--vertical .tabs__link:nth-child(7) {
-  top: 150px;
+  top: 12rem;
+}
+.tabs--vertical .tabs__link:nth-child(8) {
+  top: 14rem;
+}
+.tabs--vertical .tabs__link:nth-child(9) {
+  top: 16rem;
+}
+.tabs--vertical .tabs__link:nth-child(10) {
+  top: 18rem;
 }
 .tabs--vertical .tabs__link.active {
-  border-bottom-color: #dbdbdb;
-  border-right: #fff;
+  border-bottom-color: #d2afe3;
+  border-right: #efd9f4;
+}
+.tabs--vertical .tabs__link.active:before {
+  width: 20px;
+  height: 100%;
+  border-top: none;
+  border-left: 3px solid #d2afe3;
 }
 .tabs--vertical .tabs__content {
   width: calc(100% - 200px);
@@ -187,7 +237,7 @@ body {
   }
   .tabs .tabs__link {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-right: 0;
     margin-bottom: 5px;
     order: unset;
@@ -200,31 +250,31 @@ body {
     position: absolute;
     right: 20px;
     top: 50%;
-    width: 7px;
-    height: 7px;
-    border-right: 1px solid #232323;
-    border-bottom: 1px solid #232323;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #9a4aba;
+    border-bottom: 1px solid #9a4aba;
     transition: all 0.2s ease;
     transform: rotate(45deg);
-    margin-top: -5px;
+    margin-top: -7px;
   }
   .tabs .tabs__link.active {
-    border-radius: 5px 5px 0 0;
-    border-bottom-color: #dbdbdb;
+    border-radius: 10px 10px 0 0;
+    border-bottom-color: #d2afe3;
     margin-bottom: 0;
   }
   .tabs .tabs__link.active:after {
     transform: rotate(-135deg);
-    margin-top: 0;
+    margin-top: -2px;
   }
   .tabs .tabs__link.active:focus {
-    border-bottom-color: #dbdbdb;
+    border-bottom-color: #d2afe3;
   }
   .tabs .tabs__content {
     order: unset;
     margin-bottom: 5px;
     border-top: none;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 10px 10px;
   }
   .tabs.tabs--vertical {
     display: flex;
@@ -234,12 +284,12 @@ body {
     position: relative;
     top: unset !important;
     left: 0;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   .tabs.tabs--vertical .tabs__link.active {
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
     margin-bottom: 0;
-    border-right: 1px solid #dbdbdb;
+    border-right: 1px solid #d2afe3;
   }
   .tabs.tabs--vertical .tabs__content {
     width: 100%;
