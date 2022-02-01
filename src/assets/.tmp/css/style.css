@@ -35,7 +35,7 @@ p {
 }
 
 .hr {
-  border-top: 1px solid #d2afe3;
+  border-top: 1px solid #DFAFE3;
   margin: 3rem 0;
 }
 
@@ -52,12 +52,12 @@ p {
   line-height: 1.4rem;
   padding: 1rem 1.5rem;
   margin-right: 5px;
-  border: 1px solid #d2afe3;
+  border: 1px solid #DFAFE3;
   border-radius: 10px 10px 0 0;
   color: #343434;
-  background-color: #f9effc;
+  background-color: #FCEFFC;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   text-align: left;
   text-decoration: none;
   overflow: hidden;
@@ -65,12 +65,12 @@ p {
 .tabs__link i {
   vertical-align: middle;
   font-size: 2rem;
-  color: #e2c8ed;
+  color: #EBC8ED;
   margin-right: 0.5rem;
 }
 .tabs__link.active {
-  background-color: #efd9f4;
-  border-bottom: 1px solid #efd9f4;
+  background-color: #F3D9F4;
+  border-bottom: 1px solid #F3D9F4;
 }
 .tabs__link.active:before {
   content: "";
@@ -81,28 +81,28 @@ p {
   width: 100%;
   height: 20px;
   border-radius: 10px;
-  border-top: 3px solid #d2afe3;
+  border-top: 3px solid #DFAFE3;
 }
 .tabs__link.active:focus {
-  background-color: #efd9f4;
-  border-bottom-color: #efd9f4;
+  background-color: #F3D9F4;
+}
+.tabs__link.active:focus::before {
+  border-color: #AB4ABA;
 }
 .tabs__link.active i {
-  color: #9a4aba;
+  color: #AB4ABA;
 }
 .tabs__link:focus {
   outline: none;
-  background-color: #e9c4f4;
-  border-color: #c79cdc;
-  border-bottom-color: #d2afe3;
+  background-color: #F2E7F2;
 }
 .tabs__content {
   display: none;
   padding: 2rem;
-  border: 1px solid #d2afe3;
-  border-radius: 0 10px 10px 10px;
+  border: 1px solid #DFAFE3;
+  border-radius: 0 10px 20px 20px;
   order: 2;
-  background-color: #efd9f4;
+  background-color: #F3D9F4;
 }
 .tabs__content.active {
   display: block;
@@ -128,15 +128,15 @@ p {
   top: 50%;
   width: 10px;
   height: 10px;
-  border-right: 1px solid #9a4aba;
-  border-bottom: 1px solid #9a4aba;
+  border-right: 1px solid #AB4ABA;
+  border-bottom: 1px solid #AB4ABA;
   transition: all 0.2s ease;
   transform: rotate(45deg);
   margin-top: -7px;
 }
 .tabs--accord .tabs__link.active {
   border-radius: 10px 10px 0 0;
-  border-bottom-color: #d2afe3;
+  border-bottom-color: #DFAFE3;
   margin-bottom: 0;
 }
 .tabs--accord .tabs__link.active:after {
@@ -144,7 +144,7 @@ p {
   margin-top: -2px;
 }
 .tabs--accord .tabs__link.active:focus {
-  border-bottom-color: #d2afe3;
+  border-bottom-color: #F2E7F2;
 }
 .tabs--accord .tabs__content {
   order: unset;
@@ -165,7 +165,7 @@ p {
 .tabs--accord.tabs--vertical .tabs__link.active {
   border-radius: 10px 10px 0 0;
   margin-bottom: 0;
-  border-right: 1px solid #d2afe3;
+  border-right: 1px solid #DFAFE3;
 }
 .tabs--accord.tabs--vertical .tabs__content {
   width: 100%;
@@ -216,14 +216,14 @@ p {
   top: 18rem;
 }
 .tabs--vertical .tabs__link.active {
-  border-bottom-color: #d2afe3;
-  border-right: #efd9f4;
+  border-bottom-color: #DFAFE3;
+  border-right: #F3D9F4;
 }
 .tabs--vertical .tabs__link.active:before {
   width: 20px;
   height: 100%;
   border-top: none;
-  border-left: 3px solid #d2afe3;
+  border-left: 3px solid #DFAFE3;
 }
 .tabs--vertical .tabs__content {
   width: calc(100% - 200px);
@@ -252,15 +252,15 @@ p {
     top: 50%;
     width: 10px;
     height: 10px;
-    border-right: 1px solid #9a4aba;
-    border-bottom: 1px solid #9a4aba;
+    border-right: 1px solid #AB4ABA;
+    border-bottom: 1px solid #AB4ABA;
     transition: all 0.2s ease;
     transform: rotate(45deg);
     margin-top: -7px;
   }
   .tabs .tabs__link.active {
     border-radius: 10px 10px 0 0;
-    border-bottom-color: #d2afe3;
+    border-bottom-color: #DFAFE3;
     margin-bottom: 0;
   }
   .tabs .tabs__link.active:after {
@@ -268,7 +268,7 @@ p {
     margin-top: -2px;
   }
   .tabs .tabs__link.active:focus {
-    border-bottom-color: #d2afe3;
+    border-bottom-color: #F2E7F2;
   }
   .tabs .tabs__content {
     order: unset;
@@ -289,7 +289,7 @@ p {
   .tabs.tabs--vertical .tabs__link.active {
     border-radius: 10px 10px 0 0;
     margin-bottom: 0;
-    border-right: 1px solid #d2afe3;
+    border-right: 1px solid #DFAFE3;
   }
   .tabs.tabs--vertical .tabs__content {
     width: 100%;

@@ -6,20 +6,13 @@
 // $icon-inactive: #EBC8ED;
 // $radius: 5px;
 
-// $border-color: #DFAFE3;
-// $tab-inactive: #FCEFFC;
-// $tab-active: #F3D9F4;
-// $tab-color: #343434;
-// $icon-active: #AB4ABA;
-// $icon-inactive: #EBC8ED;
-
-
-$border-color: #d2afe3;
-$tab-inactive: #f9effc;
-$tab-active: #efd9f4;
+$border-color: #DFAFE3;
+$tab-inactive: #FCEFFC;
+$tab-active: #F3D9F4;
+$tab-focus: #F2E7F2;
 $tab-color: #343434;
-$icon-active: #9a4aba;
-$icon-inactive: #e2c8ed;
+$icon-active: #AB4ABA;
+$icon-inactive: #EBC8ED;
 $radius: 10px;
 
 
@@ -80,7 +73,7 @@ html ,body {
                 margin-top: -2px;
             }
             &:focus {
-                border-bottom-color: $border-color;
+                border-bottom-color: $tab-focus;
             }
         }
     }
@@ -161,7 +154,7 @@ p {
         color: $tab-color;
         background-color: $tab-inactive;
         font-family: Arial, Helvetica, sans-serif;
-        @include fz(18);
+        @include fz(20);
         text-align: left;
         text-decoration: none;
         overflow: hidden;
@@ -187,7 +180,9 @@ p {
             }
             &:focus {
                 background-color: $tab-active;
-                border-bottom-color: $tab-active;
+                &::before {
+                    border-color: $icon-active;
+                }
             }
             i {
                 color: $icon-active;
@@ -195,9 +190,7 @@ p {
         }
         &:focus {
             outline: none;
-            background-color: darken($tab-inactive, 10);
-            border-color: darken($border-color, 5);
-            border-bottom-color: $border-color;
+            background-color: $tab-focus;
         }
         
     }
@@ -205,7 +198,7 @@ p {
         display: none;
         padding: 2rem;
         border: 1px solid $border-color;
-        border-radius: 0 $radius $radius $radius;
+        border-radius: 0 $radius 2*$radius 2*$radius;
         order: 2;
         background-color: $tab-active;
         &.active {

@@ -40,4 +40,3 @@ window.addEventListener('resize', function(){
         }
     })
 })
-
