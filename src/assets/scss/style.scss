@@ -30,7 +30,7 @@ html ,body {
 }
 
 @mixin fz($in_px){
-    font-size: $in_px*1rem/$base-size;
+    font-size: calc($in_px*1rem/$base-size);
 }
 
 
